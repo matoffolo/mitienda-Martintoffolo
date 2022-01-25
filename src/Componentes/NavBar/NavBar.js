@@ -1,14 +1,15 @@
 import "./NavBar.css";
-
+ import CardWidget from "./CartWidget.js";
 
 const NavBar = (props) => {
   return (
     <nav>
       <ul style={{ backgroundColor: `${props.color}` }}>
+        <li><CardWidget/></li>
         <li><a>Inicio</a></li>
         <li><a>Productos</a></li>  
         <li><a>Quines Somos</a></li>
-        <li><a>contacto</a></li>
+        <li><a>Contacto</a></li>
       </ul>
     </nav>
   );
