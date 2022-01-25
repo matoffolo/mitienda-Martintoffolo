@@ -1,10 +1,14 @@
 import './App.css';
+import NavBar from "./Componentes/NavBar/NavBar"
+
+const redNav = "red"
 
 function App() {
   return (
-    <div className="App">
-      <h1>Soy un titulo</h1>
-    </div>
+    <>
+      <h1 className='App' >MI TIENDA</h1>
+      <NavBar color={redNav}/>
+    </>
   );
 }
 
