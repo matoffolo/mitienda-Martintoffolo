@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card  } from 'react-bootstrap';
-import ItemCount from './ItemCount';
+import ItemCount from '../ItemCount/ItemCount';
 
 const ItemListContainer = ({imagen,titulo,descripcion}) => {
 

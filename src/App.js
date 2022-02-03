@@ -2,6 +2,7 @@ import './App.css';
 import NavBar from "./Componentes/NavBar/NavBar"
 import ItemListContainer from './Componentes/ItemListContainer/ItemListContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ItemList from './Componentes/ItemList/ItemList';
 
 
 const redNav = "red"
@@ -27,6 +28,10 @@ function App() {
         titulo = 'Bajo la luna'
         descripcion = 'Fotografía ganadora en la categoría: Mundo Subacuático'
       />
+      </div>
+      <h2>Lista</h2>
+      <div className ='card'>
+          <ItemList />                
       </div>
     </>
   );
