@@ -3,6 +3,7 @@ import NavBar from "./Componentes/NavBar/NavBar"
 import ItemListContainer from './Componentes/ItemListContainer/ItemListContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemList from './Componentes/ItemList/ItemList';
+import ItemDetailContainer from './Componentes/ItemDetailContainer/ItemDetailContainer';
 
 
 const redNav = "red"
@@ -32,6 +33,10 @@ function App() {
       <h2>Lista</h2>
       <div className ='card'>
           <ItemList />                
+      </div>
+      <div>
+        <h1>PRACTICO NUMERO 7</h1>
+        <ItemDetailContainer />
       </div>
     </>
   );

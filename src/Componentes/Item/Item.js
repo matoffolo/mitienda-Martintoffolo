@@ -14,7 +14,7 @@ const Item = ({data}) => {
           {data.username}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          <p>Telefono: {data.phone}</p>
+          {data.phone}
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {data.website}
