@@ -1,21 +1,40 @@
-import React from 'react';
-import { Card  } from 'react-bootstrap';
-import ItemCount from '../ItemCount/ItemCount';
+import React, {useState,useEffect} from 'react';
+import Item from '../Item/Item';
+import axios from 'axios'
+import './ItemListContainer.css'
+import Spinner from '../Spinner/Spinner';
+import { Link } from 'react-router-dom';
 
-const ItemListContainer = ({imagen,titulo,descripcion}) => {
+const ItemListConteiner = () => {
+    const [products, setProducts] = useState([])
+    const [isLoading, setIsLoading] = useState(true);
+
+	useEffect(() => {
+		axios('https://fakestoreapi.com/products').then((res) =>
+    setProducts(res.data)
+		);	setTimeout(() => {
+			setIsLoading(false);
+		}, 2000);}, []);
 
   return (
-    <div>
-<Card>
-    <Card.Img variant="top" src= {imagen} />
-  <Card.Body>
-    <Card.Title> {titulo} </Card.Title>
-    <Card.Text>{descripcion}</Card.Text>
-    <ItemCount/>
-  </Card.Body>
-</Card>
+    <>
+    {isLoading ? (
+				<Spinner />
+			) : (
+    <div className='itemList'>
+      {products.map((prod)=>{
+          return(
+              <div key={prod.id}>
+                 <Link to={`/detail/${prod.id}`} className='Link'>
+                  <Item data = {prod}/>  
+                </Link>   
+              </div>
+          )
+      })}
     </div>
+      )}
+    </>
   );
 }
 
-export default ItemListContainer;
+export default ItemListConteiner;

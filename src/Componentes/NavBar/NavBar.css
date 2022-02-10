@@ -12,7 +12,7 @@ ul {
     float: left;
   }
   
-  li a {
+  li  .Link{
     display: block;
     color: white;
     text-align: center;
@@ -20,6 +20,6 @@ ul {
     text-decoration: none;
   }
   
-  li a:hover {
+  li .Link:hover {
     background-color: #111;
   }

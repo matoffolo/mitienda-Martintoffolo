@@ -1,45 +1,38 @@
 import './App.css';
 import NavBar from "./Componentes/NavBar/NavBar"
-import ItemListContainer from './Componentes/ItemListContainer/ItemListContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemList from './Componentes/ItemList/ItemList';
-import ItemDetailContainer from './Componentes/ItemDetailContainer/ItemDetailContainer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+ 
+//VIEWS
+import Home from './views/Home/Home';
+import Contacto from './views/Contacto/Contacto';
+import Productos from './views/Productos/Productos';
+import QuienesSomos from './views/QuienesSomos/QuienesSomos';
+import ItemDetailContainer from './views/ItemDetailContainer/ItemDetailContainer';
+
 
 
 const redNav = "red"
 
 function App() {
   return (
+  <Router>
     <>
       <h1 className='App' >MI TIENDA</h1>
       <NavBar color={redNav}/>
-      <div className='container'>
-      <ItemListContainer
-        imagen = 'https://www.nationalgeographic.com.es/medio/2021/10/02/a-beakful_1c4c8602_1200x799.jpg'
-        titulo = 'Pinguino'
-        descripcion = 'Fotografía ganadora en la categoría: Aves'
-      />
-       <ItemListContainer
-        imagen = 'https://www.nationalgeographic.com.es/medio/2021/10/02/emancipacion_124a8ca1_1200x799.jpg'
-        titulo = 'Tigre'
-        descripcion = 'Fotografía ganadora absoluta de la competición'
-      />
-       <ItemListContainer
-        imagen = 'https://www.nationalgeographic.com.es/medio/2021/10/02/bajo-la-luna_232f955d_1200x799.jpg'
-        titulo = 'Bajo la luna'
-        descripcion = 'Fotografía ganadora en la categoría: Mundo Subacuático'
-      />
-      </div>
-      <h2>Lista</h2>
-      <div className ='card'>
-          <ItemList />                
-      </div>
-      <div>
-        <h1>PRACTICO NUMERO 7</h1>
-        <ItemDetailContainer />
-      </div>
+      <Routes>
+        <Route path='/' element={<Home/>} />    
+        <Route path='/productos' element={<Productos/>} /> 
+        <Route path='/contacto' element={<Contacto/>} /> 
+        <Route path='/quienesSomos' element={<QuienesSomos/>} /> 
+        <Route path='/detail/:id' element={<ItemDetailContainer/>} /> 
+     
+
+      </Routes>
     </>
+  </Router>
   );
 }
 
 export default App;
+  
