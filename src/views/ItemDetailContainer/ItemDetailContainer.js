@@ -21,15 +21,10 @@ useEffect(() => {
 
  
   return (
-    <div className='container'>
-      {products.map((prod) => {
-        return (
+ 
           <div key={prod.id}>
             <ItemDetail data={prod} />
           </div>
-        );
-      })}
-    </div>
 );
 };
 
