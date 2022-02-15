@@ -1,9 +1,12 @@
 import * as React from 'react';
 import {Card,CardContent, CardMedia,Typography } from '@mui/material';
+import ItemCount from '../ItemCount/ItemCount';
+import './ItemDetail.css'
 
 
 const  ItemDetail =({data}) => {
   return (
+  <div className='CharacterList-Container'>
     <Card sx={{ maxWidth: 300}}>
       <CardMedia 
         component="img"
@@ -19,8 +22,9 @@ const  ItemDetail =({data}) => {
           {data.description}
         </Typography>
       </CardContent >
-
+      <ItemCount/>
     </Card>
+  </div>
   );
 }
 
