@@ -13,11 +13,16 @@ const ItemCount = () => {
         setCounter(counter - 1)}
     }
 
+    const onAdd = () => {
+    
+    }
+
   return (
     <div>
       <p>{counter}</p>
     <button onClick={incrementarContador}>Incrementar</button>
     <button onClick={decrementarContador}>Decrementar</button>
+    <button type='button' onClick={onAdd}>Agregar al Carrito</button>
     </div>
   );
 }
