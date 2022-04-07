@@ -22,7 +22,7 @@ const  ItemDetail =({data}) => {
           {data.description}
         </Typography>
       </CardContent >
-      <ItemCount/>
+      <ItemCount onAdd={data}/>
     </Card>
   </div>
   );
